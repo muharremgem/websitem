@@ -59,9 +59,10 @@ var app = document.getElementById("autoWrite");
 var typewriter = new Typewriter(app, {
   strings: [
     "Web ",
-    ".Net Developer",
     "Design",
     "Full Stack Developer",
+    "React Developer"
+    
   ],
   loop: true,
   autoStart: true,
