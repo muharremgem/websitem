@@ -483,8 +483,6 @@ header {
 
 .work_container {
   row-gap: 2rem;
-  
-  
 }
 
 .work_img {
@@ -492,13 +490,10 @@ header {
   border-radius: 0.5rem;
   overflow: hidden;
   max-height: 150px;
-
 }
 .work_img img {
   transition: 1s;
   cursor: pointer;
- 
- 
 }
 
 .work_img img:hover {
@@ -635,8 +630,7 @@ header {
     bottom: 12%;
   }
 
-  .about_container{
-    
+  .about_container {
     align-items: center;
     text-align: initial;
   }
