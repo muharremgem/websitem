@@ -105,7 +105,7 @@ img {
   position: relative;
   font-size: var(--h2-font-size);
   color: var(--first-color);
-  margin-top: var(--mb-2);
+  margin-top: 1rem;
   margin-bottom: var(--mb-4);
   text-align: center;
 }
@@ -579,12 +579,12 @@ header {
   }
 
   .section {
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
   }
 
   .section-title {
-    margin-bottom: var(--mb-6);
+    margin-bottom: 1rem;
   }
   .section-title::after {
     width: 80px;
