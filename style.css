@@ -185,7 +185,7 @@ img {
 .logo.fade {
   bottom: 150px;
   opacity: 0;
-  transition: ease-in-out 0.7s;
+  transition: ease-in-out 0.5s;
 }
 
 /*Dark mode toggle button*/
@@ -492,7 +492,7 @@ header {
   max-height: 150px;
 }
 .work_img img {
-  transition: 1s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
