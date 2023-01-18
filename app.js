@@ -57,13 +57,7 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 var app = document.getElementById("autoWrite");
 
 var typewriter = new Typewriter(app, {
-  strings: [
-    "Web ",
-    "Design",
-    "Full Stack Developer",
-    "React Developer"
-    
-  ],
+  strings: ["Web ", "Design", "Full Stack Developer", "React Developer"],
   loop: true,
   autoStart: true,
 });
@@ -71,7 +65,7 @@ var typewriter = new Typewriter(app, {
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
   origin: "top",
-  distance: "40px",
+  distance: "60px",
   duration: 2000,
   reset: true,
 });
@@ -112,7 +106,4 @@ document.getElementById("head").classList.toggle("dark");
 /*Particles.js*/
 particlesJS.load("particles-js", "assets/particles.json");
 
-
-
 ///********* Sound keyboard  *************/
-
