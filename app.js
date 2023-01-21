@@ -121,7 +121,7 @@ document
     })
       .then((response) => {
         if (response.ok) {
-          document.querySelector(".contact_form").reset();
+          document.querySelector(".contact_input").reset();
         }
       })
       .catch((error) => {
