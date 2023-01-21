@@ -115,6 +115,8 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault();
     const formData = new FormData(this);
+    const submitBtn = document.querySelector(".contact_button");
+    submitBtn.setAttribute("disabled", "true");
     try {
       const response = await fetch("https://formspree.io/f/mwkzpada", {
         method: "POST",
@@ -129,5 +131,7 @@ document
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      submitBtn.removeAttribute("disabled");
     }
   });
