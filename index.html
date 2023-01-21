@@ -530,15 +530,17 @@
               name="name"
               placeholder="Name"
               class="contact_input"
+              action="https://formspree.io/f/mwkzpada"
+              method="POST"
               required
             />
             <input
               type="email"
-              name="_replyto"
               name="email"
               placeholder="Email"
               class="contact_input"
               required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
             <textarea
               name="text"
@@ -590,7 +592,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
-<!-- data-netlify-recaptcha="true"
-action="https://formspree.io/f/mwkzpada"
-method="POST" -->

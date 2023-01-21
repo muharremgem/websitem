@@ -126,7 +126,7 @@ document
         document
           .querySelectorAll(".contact_form input")
           .forEach(function (input) {
-            input.value = "";
+            input.value = " ";
           });
       }
     } catch (error) {
