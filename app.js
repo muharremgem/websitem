@@ -112,20 +112,19 @@ particlesJS.load("particles-js", "assets/particles.json");
 
 document
   .querySelector(".contact_form")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
     event.preventDefault();
     const formData = new FormData(this);
 
-    fetch("https://formspree.io/f/mwkzpada", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          this.reset();
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+    try {
+      const response = await fetch("https://formspree.io/f/mwkzpada", {
+        method: "POST",
+        body: formData,
       });
+      if (response.ok) {
+        this.reset();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   });
