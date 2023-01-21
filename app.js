@@ -114,5 +114,18 @@ document
   .querySelector(".contact_form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    this.reset();
+    const formData = new FormData(this);
+
+    fetch("https://formspree.io/f/mwkzpada", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          this.reset();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
