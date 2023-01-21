@@ -115,14 +115,17 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault();
     const formData = new FormData(this);
-
     try {
       const response = await fetch("https://formspree.io/f/mwkzpada", {
         method: "POST",
         body: formData,
       });
       if (response.ok) {
-        this.reset();
+        document
+          .querySelectorAll(".contact_form input")
+          .forEach(function (input) {
+            input.value = "";
+          });
       }
     } catch (error) {
       console.log(error);
