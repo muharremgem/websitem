@@ -107,3 +107,12 @@ document.getElementById("head").classList.toggle("dark");
 particlesJS.load("particles-js", "assets/particles.json");
 
 ///********* Sound keyboard  *************/
+
+// ContactForm
+
+document
+  .querySelector(".contact_form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    this.reset();
+  });
