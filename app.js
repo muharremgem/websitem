@@ -110,21 +110,24 @@ particlesJS.load("particles-js", "assets/particles.json");
 
 // ContactForm
 
-document
-  .querySelector(".contact_form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    fetch("https://formspree.io/f/mwkzpada", {
-      method: "POST",
-      body: formData,
+function sendMail() {
+  var params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const serviceID = "service_y4ldjqo";
+  const templateID = "template_8t19a6n";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      console.log(res);
+      alert("Your message sent successfully!!");
     })
-      .then((response) => {
-        if (response.ok) {
-          document.querySelector(".contact_input").reset();
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+    .catch((err) => console.log(err));
+}

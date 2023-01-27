@@ -20,6 +20,16 @@
     />
     <title>Muharrem GEM | Full Stack Developer</title>
     <link rel="icon" href="./img/favicon.png" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("Yfm7zf-n1be5txAL3");
+      })();
+    </script>
   </head>
 
   <body>
@@ -523,15 +533,11 @@
       <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
         <div class="contact_container bd-grid">
-          <form
-            class="contact_form"
-            name="contact"
-            action="https://formspree.io/f/mwkzpada"
-            method="POST"
-          >
+          <form class="contact_form" name="contact">
             <input type="hidden" name="form-name" value="contact" />
             <input
               type="text"
+              id="name"
               name="name"
               placeholder="Name"
               class="contact_input"
@@ -539,14 +545,15 @@
             />
             <input
               type="email"
-              name="email"
+              id="email"
               placeholder="Email"
               class="contact_input"
               required
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
             <textarea
-              name="text"
+              id="message"
+              placeholder="Message"
               cols="0"
               rows="10"
               class="contact_input"
@@ -554,8 +561,7 @@
             ></textarea>
 
             <!-- <div data-netlify-recaptcha="true" class="contact_input captcha">6LckKL4fAAAAAIGKOgzZqm_81a5kiwV--kPDbc2c</div> -->
-
-            <input type="submit" value="Send" class="contact_button button" />
+            <button class="contact_button button" onclick="sendMail()">Submit</button>
           </form>
         </div>
       </section>
