@@ -110,11 +110,47 @@ particlesJS.load("particles-js", "assets/particles.json");
 
 // ContactForm
 
+// function sendMail() {
+//   var params = {
+//     name: document.getElementById("name").value,
+//     email: document.getElementById("email").value,
+//     message: document.getElementById("message").value,
+//   };
+
+//   const serviceID = "service_y4ldjqo";
+//   const templateID = "template_8t19a6n";
+
+//   emailjs
+//     .send(serviceID, templateID, params)
+//     .then((res) => {
+//       document.getElementById("name").value = "";
+//       document.getElementById("email").value = "";
+//       document.getElementById("message").value = "";
+//       console.log(res);
+//       alert("Your message sent successfully!!");
+//     })
+//     .catch((err) => console.log(err));
+// }
+
 function sendMail() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  if (name == "" || email == "" || message == "") {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
   var params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
+    name: name,
+    email: email,
+    message: message,
   };
 
   const serviceID = "service_y4ldjqo";
@@ -127,7 +163,15 @@ function sendMail() {
       document.getElementById("email").value = "";
       document.getElementById("message").value = "";
       console.log(res);
-      alert("Your message sent successfully!!");
+      // alert("Your message sent successfully!!");
     })
     .catch((err) => console.log(err));
+
+  return false;
+}
+
+function validateEmail(email) {
+  var re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
